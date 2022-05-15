@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">ClearVis</string>
     <string name="login">Login</string>
-    <string name="signup">Sign Up\</string>
+    <string name="signup">Sign Up</string>
     <string name="NotHaveAcc">Doesn’t have account? Sign up!</string>
     <string name="email_hint">example@gmail.com</string>
+    <string name="name_hint">Full Name</string>
+    <string name="AlrHaveAcc">Already have an account? Login!</string>
 </resources>
