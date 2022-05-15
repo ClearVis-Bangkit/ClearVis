@@ -1,4 +1,4 @@
-package com.dicoding.bintangpr.clearvis.view.login
+package com.dicoding.bintangpr.clearvis.view.signup
 
 import android.content.Intent
 import android.os.Build
@@ -8,14 +8,14 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.dicoding.bintangpr.clearvis.R
 import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
-import com.dicoding.bintangpr.clearvis.view.signup.SignupActivity
+import com.dicoding.bintangpr.clearvis.databinding.ActivitySignupBinding
+import com.dicoding.bintangpr.clearvis.view.login.LoginActivity
 
-class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
-
+class SignupActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupView()
         setupAction()
@@ -35,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupAction(){
-        binding.signupBtn.setOnClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
+        binding.loginBtn.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }
