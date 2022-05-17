@@ -2,11 +2,10 @@ package com.dicoding.bintangpr.clearvis.view.login
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.dicoding.bintangpr.clearvis.R
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
 import com.dicoding.bintangpr.clearvis.view.signup.SignupActivity
 

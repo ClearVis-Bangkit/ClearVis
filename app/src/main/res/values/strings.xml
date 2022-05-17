@@ -6,4 +6,8 @@
     <string name="email_hint">example@gmail.com</string>
     <string name="name_hint">Full Name</string>
     <string name="AlrHaveAcc">Already have an account? Login!</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <string name="title_eyeCheck">Eye Check</string>
+    <string name="title_profile">Profile</string>
 </resources>
