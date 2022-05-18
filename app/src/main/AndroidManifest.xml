@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClearVis">
         <activity
+            android:name=".view.eyecheck.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.signup.SignupActivity"
             android:exported="false" />
         <activity
