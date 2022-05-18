@@ -23,4 +23,9 @@
     <string name="tv_result_eyeCheck">Your Eye is</string>
     <string name="txt_percent">%</string>
     <string name="decs_image_user_eye">Image user eye</string>
+    <string name="desc_logo_clearvis">Logo_clearvis</string>
+    <string name="desc_background_email">background email</string>
+    <string name="desc_icon_email">icon email</string>
+    <string name="desc_background_password">background password</string>
+    <string name="decs_icon_password">icon password</string>
 </resources>

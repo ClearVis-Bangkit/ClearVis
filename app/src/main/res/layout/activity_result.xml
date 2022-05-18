@@ -19,8 +19,9 @@
         <ImageView
             android:id="@+id/iv_eye"
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_marginTop="32dp"
+            android:scaleType="centerCrop"
             android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +67,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_result"
+            android:id="@+id/tv_result"
             style="@style/TextAppearance.MdcTypographyStyles.Tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,6 +78,18 @@
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
             tools:text="Healthy" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_checkAgain"
+            style="@style/TextAppearance.MdcTypographyStyles.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Back to Home"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tv_result"
+            app:layout_constraintStart_toStartOf="@+id/tv_result"
+            app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
