@@ -10,4 +10,22 @@
     <string name="title_history">History</string>
     <string name="title_eyeCheck">Eye Check</string>
     <string name="title_profile">Profile</string>
+    <string name="txt_tittle_eyecheck">Photo of your eyes and know the disease early</string>
+    <string name="desc_image_detect_eye">Image detect eye</string>
+    <string name="txt_take_picture">Take Picture</string>
+    <string name="txt_how_to">How To</string>
+    <string name="txt_1">1</string>
+    <string name="txt_step1">Take a photo of your face with flash on</string>
+    <string name="txt_2">2</string>
+    <string name="txt_step2">Crop left or right eye image</string>
+    <string name="txt_3">3</string>
+    <string name="txt_step3">finally you get the detection result</string>
+    <string name="tv_result_eyeCheck">Your Eye is</string>
+    <string name="txt_percent">%</string>
+    <string name="decs_image_user_eye">Image user eye</string>
+    <string name="desc_logo_clearvis">Logo_clearvis</string>
+    <string name="desc_background_email">background email</string>
+    <string name="desc_icon_email">icon email</string>
+    <string name="desc_background_password">background password</string>
+    <string name="decs_icon_password">icon password</string>
 </resources>

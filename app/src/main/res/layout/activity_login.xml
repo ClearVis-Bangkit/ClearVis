@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clearvis_logo" />
+        app:srcCompat="@drawable/clearvis_logo"
+        android:contentDescription="@string/desc_logo_clearvis" />
 
     <TextView
         android:id="@+id/login_text"
@@ -36,7 +37,8 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text"
-        app:srcCompat="@drawable/et_layout" />
+        app:srcCompat="@drawable/et_layout"
+        android:contentDescription="@string/desc_background_email" />
 
     <EditText
         android:id="@+id/email_et"
@@ -49,7 +51,8 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="@+id/email_layout"
         app:layout_constraintEnd_toEndOf="@+id/email_layout"
-        app:layout_constraintTop_toTopOf="@+id/email_layout" />
+        app:layout_constraintTop_toTopOf="@+id/email_layout"
+        android:autofillHints="E-mail" />
 
 
     <ImageView
@@ -60,7 +63,8 @@
         app:layout_constraintEnd_toStartOf="@+id/email_et"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/email_layout"
-        app:layout_constraintTop_toTopOf="@+id/email_layout" />
+        app:layout_constraintTop_toTopOf="@+id/email_layout"
+        android:contentDescription="@string/desc_icon_email" />
 
     <ImageView
         android:id="@+id/password_layout"
@@ -71,7 +75,8 @@
         app:layout_constraintEnd_toEndOf="@+id/email_layout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/email_layout"
-        app:layout_constraintTop_toBottomOf="@+id/email_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/email_layout"
+        android:contentDescription="@string/desc_background_password" />
 
     <com.dicoding.bintangpr.clearvis.view.customview.PasswordEditText
         android:id="@+id/passwordEditTextLayout"
@@ -91,7 +96,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/password_layout"
         app:layout_constraintEnd_toStartOf="@+id/passwordEditTextLayout"
         app:layout_constraintStart_toStartOf="@+id/password_layout"
-        app:layout_constraintTop_toTopOf="@+id/password_layout" />
+        app:layout_constraintTop_toTopOf="@+id/password_layout"
+        android:contentDescription="@string/decs_icon_password" />
 
     <Button
         android:id="@+id/login_btn"
