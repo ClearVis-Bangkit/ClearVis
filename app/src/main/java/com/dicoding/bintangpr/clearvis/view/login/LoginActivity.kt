@@ -7,37 +7,29 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
-import com.dicoding.bintangpr.clearvis.data.preference.UserPreference
 import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
-import com.dicoding.bintangpr.clearvis.view.factory.ViewModelFactory
 import com.dicoding.bintangpr.clearvis.view.main.MainActivity
 import com.dicoding.bintangpr.clearvis.view.signup.SignupActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var loginViewModel: LoginViewModel
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupViewModel()
         setupView()
         setupAction()
-    }
-    private fun setupViewModel(){
-        loginViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[LoginViewModel::class.java]
     }
 
     private fun showLoading(isLoading: Boolean){
@@ -49,22 +41,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupViewModelLogin(){
-        loginViewModel.getUser().observe(this, { user ->
-
-            if (user.accessToken!= ""){
+    private fun setupViewModelLogin() {
+        loginViewModel.getUser().observe(this) { user ->
+            if (user.accessToken.isNotEmpty()) {
                 alertBuilderConfirm()
-
             } else {
                 alertBuilderFalse()
             }
-        })
+        }
     }
 
     private fun alertBuilderFalse(){
         AlertDialog.Builder(this).apply {
-            setTitle("Maaf!")
-            setMessage("email atau passwordmu salah, silahkan masukkan lagi email dan passwordmu")
+            setTitle("Something wrong!")
+            setMessage("your email or password is wrong, please enter your email and password again")
             setPositiveButton("Lanjut") { _, _ ->
 
             }
@@ -73,20 +63,16 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun alertBuilderConfirm(){
-        AlertDialog.Builder(this).apply {
-            setTitle("Yeah!")
-            setMessage("Selamat Datang mari periksa matamu")
-            setPositiveButton("Lanjut") { _, _ ->
-
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
-                finish()
-            }
-            create()
-            show()
-        }
+    private fun alertBuilderConfirm() {
+        Toast.makeText(
+            this@LoginActivity,
+            "Login Success",
+            Toast.LENGTH_LONG
+        ).show()
+        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 
 
@@ -120,9 +106,9 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else -> {
                     loginViewModel.loginUser(email, password)
-                    loginViewModel.isLoading.observe(this, {
+                    loginViewModel.isLoading.observe(this) {
                         showLoading(it)
-                    })
+                    }
 
                 }
             }

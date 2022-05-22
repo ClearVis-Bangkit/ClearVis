@@ -64,4 +64,7 @@ dependencies {
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     //Live Data
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    //koin depedency injection
+    implementation "io.insert-koin:koin-core:3.1.5"
+    implementation "io.insert-koin:koin-android:3.1.5"
 }
