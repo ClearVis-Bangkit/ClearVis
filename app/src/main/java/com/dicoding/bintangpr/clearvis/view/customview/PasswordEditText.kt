@@ -30,7 +30,7 @@ class PasswordEditText: AppCompatEditText {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        hint = "******"
+
         background = ContextCompat.getDrawable(context, R.drawable.edittext_layout)
 
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
