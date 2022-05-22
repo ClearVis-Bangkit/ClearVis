@@ -56,4 +56,12 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     // Tensorflow lite dependencies
     implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    //Preference Data Store
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    //Live Data
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 }
