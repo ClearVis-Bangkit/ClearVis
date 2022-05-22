@@ -1,5 +1,4 @@
 package com.dicoding.bintangpr.clearvis.data.api
-import android.content.Context
 import com.dicoding.bintangpr.clearvis.data.model.LoginResponse
 import com.dicoding.bintangpr.clearvis.data.model.RegisterResponse
 import okhttp3.OkHttpClient
@@ -20,7 +19,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.100.4:5000/")
+                .baseUrl("http://192.168.1.7:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

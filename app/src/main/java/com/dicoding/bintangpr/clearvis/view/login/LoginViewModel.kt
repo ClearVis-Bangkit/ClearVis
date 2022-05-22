@@ -26,12 +26,12 @@ class LoginViewModel(private val pref: UserPreference): ViewModel() {
                 call: Call<LoginResponse>,
                 response: Response<LoginResponse>
             ) {
-                _isLoading.value = false
                 if (response.isSuccessful){
                     val responseBody = response.body()
                     if (responseBody != null){
                         viewModelScope.launch {
                             response.body()?.data?.let { pref.saveUser(it) }
+                            _isLoading.value = false
                         }
                         Log.d(TAG, "${response.body()?.success}")
 //                        _isMessage.value = response.body()?.success
@@ -43,6 +43,7 @@ class LoginViewModel(private val pref: UserPreference): ViewModel() {
                         }
                     }
                 }else{
+                    _isLoading.value = false
                     Log.e(TAG, "onFailure: ${response.body()?.success}")
 //                    _isMessage.value = response.body()?.success
                         //perlu message buat ditampilin tapi kalau ga ada gapapa

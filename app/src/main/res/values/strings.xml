@@ -31,4 +31,5 @@
     <string name="save">Save Profile</string>
     <string name="password">Password</string>
     <string name="Password_Confirm">Confirm Password</string>
+    <string name="txt_logout">Logout</string>
 </resources>

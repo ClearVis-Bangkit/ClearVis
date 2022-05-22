@@ -110,7 +110,7 @@
             app:layout_constraintTop_toTopOf="@+id/email_layout" />
 
         <Button
-            android:id="@+id/signup_btn"
+            android:id="@+id/save_btn"
             android:layout_width="312dp"
             android:layout_height="56dp"
             android:layout_marginTop="80dp"
@@ -119,10 +119,21 @@
             android:textColor="@color/black"
             app:backgroundTint="@color/soft_blue"
             app:layout_constraintEnd_toEndOf="@+id/email_layout"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/email_layout"
             app:layout_constraintTop_toBottomOf="@+id/email_layout" />
 
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="312dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/txt_logout"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/soft_blue"
+            app:layout_constraintEnd_toEndOf="@+id/save_btn"
+            app:layout_constraintStart_toStartOf="@+id/save_btn"
+            app:layout_constraintTop_toBottomOf="@+id/save_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
