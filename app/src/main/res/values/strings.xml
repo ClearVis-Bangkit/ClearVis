@@ -32,4 +32,5 @@
     <string name="password">Password</string>
     <string name="Password_Confirm">Confirm Password</string>
     <string name="txt_logout">Logout</string>
+    <string name="edit">edit profile</string>
 </resources>

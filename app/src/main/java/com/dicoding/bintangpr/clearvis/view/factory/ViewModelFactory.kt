@@ -20,6 +20,9 @@ class ViewModelFactory (private val pref: UserPreference) : ViewModelProvider.Ne
             modelClass.isAssignableFrom(SplashScreenViewModel::class.java) -> {
                 SplashScreenViewModel(pref) as T
             }
+//            modelClass.isAssignableFrom(ProfileViewModel::class.java)-> {
+//                ProfileViewModel(pref) as T
+//            }
 //            modelClass.isAssignableFrom(MapsViewModel::class.java) -> {
 //                MapsViewModel(pref) as T
 //            }
