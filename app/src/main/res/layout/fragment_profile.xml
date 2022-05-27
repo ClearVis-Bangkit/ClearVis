@@ -42,15 +42,14 @@
             app:layout_constraintTop_toBottomOf="@+id/account_circle"
             app:srcCompat="@drawable/et_layout" />
 
-        <EditText
-            android:id="@+id/name_et"
+        <TextView
+            android:id="@+id/name_tv"
             style="@style/profile_text"
             android:layout_width="255dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_layout"
             android:gravity="center_vertical"
-            android:inputType="text"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/fullname_layout"
             app:layout_constraintEnd_toEndOf="@+id/fullname_layout"
@@ -63,7 +62,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_person_24"
             app:layout_constraintBottom_toBottomOf="@+id/fullname_layout"
-            app:layout_constraintEnd_toStartOf="@+id/name_et"
+            app:layout_constraintEnd_toStartOf="@+id/name_tv"
             app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="@+id/fullname_layout"
             app:layout_constraintTop_toTopOf="@+id/fullname_layout" />
@@ -81,7 +80,8 @@
             app:layout_constraintTop_toBottomOf="@+id/fullname_layout"
             app:srcCompat="@drawable/et_layout" />
 
-        <EditText
+
+        <TextView
             android:id="@+id/email_et"
             style="@style/profile_text"
             android:layout_width="255dp"
@@ -90,7 +90,6 @@
             android:autofillHints="E-mail"
             android:background="@drawable/edittext_layout"
             android:gravity="center_vertical"
-            android:inputType="textEmailAddress"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/email_layout"
             app:layout_constraintEnd_toEndOf="@+id/email_layout"
@@ -109,31 +108,20 @@
             app:layout_constraintStart_toStartOf="@+id/email_layout"
             app:layout_constraintTop_toTopOf="@+id/email_layout" />
 
-        <Button
-            android:id="@+id/save_btn"
-            android:layout_width="312dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/save"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/soft_blue"
-            app:layout_constraintEnd_toEndOf="@+id/email_layout"
-            app:layout_constraintStart_toStartOf="@+id/email_layout"
-            app:layout_constraintTop_toBottomOf="@+id/email_layout" />
 
         <Button
             android:id="@+id/logout_btn"
             android:layout_width="312dp"
             android:layout_height="56dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="80dp"
             android:text="@string/txt_logout"
             android:textAlignment="center"
             android:textColor="@color/black"
             app:backgroundTint="@color/soft_blue"
-            app:layout_constraintEnd_toEndOf="@+id/save_btn"
-            app:layout_constraintStart_toStartOf="@+id/save_btn"
-            app:layout_constraintTop_toBottomOf="@+id/save_btn" />
+            app:layout_constraintEnd_toEndOf="@+id/email_layout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/email_layout"
+            app:layout_constraintTop_toBottomOf="@+id/email_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
