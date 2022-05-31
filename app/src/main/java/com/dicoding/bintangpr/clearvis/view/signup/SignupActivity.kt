@@ -44,25 +44,27 @@ class SignupActivity : AppCompatActivity() {
         } else{
             binding.progressBar.visibility = View.GONE
             signupViewModel.isMessage.observe(this, {
-                AlertDialog.Builder(this).apply {
-                    setTitle("Yeah!")
-                    var message = it
-                    setMessage(it)
-                    if (message.length==33 ){
-                        setPositiveButton("Lanjut") { _, _ ->
-                            val intent = Intent(this@SignupActivity, LoginActivity::class.java)
-                            startActivity(intent)
-                            finish()
+                var message = it
+                signupViewModel.isSuccess.observe(this,{
+                    AlertDialog.Builder(this).apply {
+                        setTitle("Yeah!")
+                        setMessage(message)
+                        if (it){
+                            setPositiveButton("Lanjut") { _, _ ->
+                                val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                        } else {
+                            setPositiveButton("Lanjut") { _, _ ->
+                                finish()
+                            }
                         }
-                    } else {
-                        setPositiveButton("Lanjut") { _, _ ->
-                            finish()
-                        }
+                        create()
+                        show()
                     }
+                })
 
-                    create()
-                    show()
-                }
             })
         }
     }
