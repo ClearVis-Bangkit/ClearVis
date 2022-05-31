@@ -15,9 +15,6 @@ class LoginViewModel(private val pref: UserPreference): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val _isMessage = MutableLiveData<String>()
-    val isMessage: LiveData<String> = _isMessage
-
     fun loginUser(email: String, password: String){
         _isLoading.value = true
         val client = ApiConfig.getApiService().loginUser(email, password)
@@ -34,24 +31,10 @@ class LoginViewModel(private val pref: UserPreference): ViewModel() {
                             _isLoading.value = false
                         }
                         Log.d(TAG, "${response.body()?.success}")
-//                        _isMessage.value = response.body()?.success
-                        //perlu message buat ditampilin tapi kalau ga ada gapapa
-                        if(response.body()?.success == true){
-                            _isMessage.value = "success"
-                        } else{
-                            _isMessage.value = "Failed"
-                        }
                     }
                 }else{
                     _isLoading.value = false
                     Log.e(TAG, "onFailure: ${response.body()?.success}")
-//                    _isMessage.value = response.body()?.success
-                        //perlu message buat ditampilin tapi kalau ga ada gapapa
-                    if(response.body()?.success == true){
-                        _isMessage.value = "success"
-                    } else{
-                        _isMessage.value = "Failed"
-                    }
                 }
             }
 

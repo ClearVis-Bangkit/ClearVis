@@ -17,6 +17,9 @@ class SignupViewModel: ViewModel() {
     private val _isMessage = MutableLiveData<String>()
     val isMessage: LiveData<String> = _isMessage
 
+    private val _isSuccess = MutableLiveData<Boolean>()
+    val isSuccess : LiveData<Boolean> = _isSuccess
+
     fun registerUser(name: String, email: String, password: String, confirmPassword:String){
         _isLoading.value = true
         val client = ApiConfig.getApiService().registerUser(name, email, password, confirmPassword)
@@ -31,6 +34,7 @@ class SignupViewModel: ViewModel() {
                     if (responseBody != null){
                         Log.d(TAG, "${response.body()?.message}")
                         _isMessage.value = response.body()?.message
+                        _isSuccess.value = response.body()?.success
                     }
                 }else{
                     Log.e(TAG, "onFailure: ${response.body()?.message}")

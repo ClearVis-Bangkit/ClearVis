@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Message
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -17,12 +19,15 @@ import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
 import com.dicoding.bintangpr.clearvis.view.main.MainActivity
 import com.dicoding.bintangpr.clearvis.view.signup.SignupActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.log
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private val loginViewModel: LoginViewModel by viewModel()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,15 +57,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun alertBuilderFalse(){
-        AlertDialog.Builder(this).apply {
-            setTitle("Something wrong!")
-            setMessage("your email or password is wrong, please enter your email and password again")
-            setPositiveButton("Lanjut") { _, _ ->
+            AlertDialog.Builder(this).apply {
+                setTitle("Something wrong!")
+                setMessage("email atau password anda salah")
+                setPositiveButton("Lanjut") { _, _ ->
 
+                }
+                create()
+                show()
             }
-            create()
-            show()
-        }
     }
 
     private fun alertBuilderConfirm() {
