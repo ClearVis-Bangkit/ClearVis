@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.dicoding.bintangpr.clearvis.data.preference.UserPreference
+import arrow.core.Either
+import arrow.core.getOrElse
 import com.dicoding.bintangpr.clearvis.databinding.FragmentProfileBinding
-import com.dicoding.bintangpr.clearvis.view.factory.ViewModelFactory
 import com.dicoding.bintangpr.clearvis.view.login.LoginActivity
+import io.github.nefilim.kjwt.JWT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
@@ -30,7 +29,10 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupViewModel()
+        profileViewModel.getUser().observe(viewLifecycleOwner) { user ->
+            setUpView(user.accessToken)
+        }
+
         binding?.logoutBtn?.setOnClickListener {
             profileViewModel.logout()
             Intent(requireContext(), LoginActivity::class.java).also { intent ->
@@ -40,10 +42,25 @@ class ProfileFragment : Fragment() {
         }
 
     }
-    private fun setupViewModel(){
-        profileViewModel.getUser().observe(viewLifecycleOwner, { user ->
-            binding?.nameTv?.text = user.name
-        })
+
+    private fun setUpView(token: String) {
+        val getName = JWT.decode(token).map {
+            it.claimValue("name").getOrElse { "error" }
+        }
+        val getEmail = JWT.decode(token).map {
+            it.claimValue("email").getOrElse { "error" }
+        }
+        val name = when (getName) {
+            is Either.Right -> getName.value
+            else -> "error"
+        }
+        val email = when (getEmail) {
+            is Either.Right -> getEmail.value
+            else -> "error"
+        }
+
+        binding?.nameTv?.text = name
+        binding?.emailEt?.text = email
     }
 
     override fun onDestroyView() {
