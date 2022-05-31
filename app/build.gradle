@@ -67,4 +67,7 @@ dependencies {
     //koin depedency injection
     implementation "io.insert-koin:koin-core:3.1.5"
     implementation "io.insert-koin:koin-android:3.1.5"
+    // decode jwt
+    implementation "io.arrow-kt:arrow-core:1.0.1"
+    implementation "io.github.nefilim.kjwt:kjwt-core:0.5.3"
 }
