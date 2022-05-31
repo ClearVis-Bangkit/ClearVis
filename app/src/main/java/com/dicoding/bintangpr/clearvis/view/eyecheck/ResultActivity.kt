@@ -4,21 +4,33 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import arrow.core.Either
+import arrow.core.getOrElse
 import com.bumptech.glide.Glide
 import com.canhub.cropper.CropImage
 import com.dicoding.bintangpr.clearvis.databinding.ActivityResultBinding
 import com.dicoding.bintangpr.clearvis.view.main.MainActivity
+import io.github.nefilim.kjwt.JWT
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.ByteArrayOutputStream
 import java.io.File
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
-
+    private val eyeCheckViewModel: EyeCheckViewModel by viewModel()
     private val mInputSize = 224
     private val mModelPath = "model_VGGBased-3_multiclass.tflite"
     private val mLabelPath = "label.txt"
     private lateinit var classifier: Classifier
+    private lateinit var detectionResult: List<Classifier.Recognition>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +50,42 @@ class ResultActivity : AppCompatActivity() {
                 .load(bitmap)
                 .into(binding.ivEye)
             detectImage(bitmap)
+
+            eyeCheckViewModel.isLoading.observe(this) {
+                binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+            }
+
+
+            eyeCheckViewModel.getUser().observe(this) { data ->
+                val getId = JWT.decode(data.accessToken).map {
+                    it.claimValue("id").getOrElse { "error" }
+                }
+                val id = when (getId) {
+                    is Either.Right -> getId.value
+                    else -> "error"
+                }
+
+                val userId = id.toRequestBody("text/plain".toMediaType())
+                val status = detectionResult[0].title.toRequestBody("text/plain".toMediaType())
+                val requestImageFile = file.asRequestBody("image/jpg".toMediaTypeOrNull())
+                val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "image",
+                    file.name,
+                    requestImageFile
+                )
+
+                eyeCheckViewModel.uploadHistory(data.accessToken, userId, imageMultipart, status)
+            }
+
+            eyeCheckViewModel.uploadResponse.observe(this) {
+                if (it.success == true) {
+                    Toast.makeText(
+                        this@ResultActivity,
+                        "Data Uploaded",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
         }
 
         binding.btnCheckAgain.setOnClickListener {
@@ -50,7 +98,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun detectImage(bitmap: Bitmap) {
-        val detectionResult = classifier.recognizeImage(bitmap)
+        detectionResult = classifier.recognizeImage(bitmap)
         val confidence = detectionResult[0].confidence * 100
         binding.tvResult.text = detectionResult[0].title
         binding.tvConfidence.text = confidence.toString()
