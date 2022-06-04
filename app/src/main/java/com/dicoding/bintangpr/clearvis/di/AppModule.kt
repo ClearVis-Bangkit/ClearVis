@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.dicoding.bintangpr.clearvis.data.preference.UserPreference
 import com.dicoding.bintangpr.clearvis.view.eyecheck.EyeCheckViewModel
+import com.dicoding.bintangpr.clearvis.view.history.HistoryViewModel
 import com.dicoding.bintangpr.clearvis.view.login.LoginViewModel
 import com.dicoding.bintangpr.clearvis.view.profile.ProfileViewModel
 import com.dicoding.bintangpr.clearvis.view.splashscreen.SplashScreenViewModel
@@ -27,4 +28,5 @@ val viewModelModule = module {
     viewModel { LoginViewModel(get()) }
     viewModel { ProfileViewModel(get()) }
     viewModel { EyeCheckViewModel(get()) }
+    viewModel { HistoryViewModel(get()) }
 }

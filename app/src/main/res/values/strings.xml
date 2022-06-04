@@ -33,4 +33,7 @@
     <string name="Password_Confirm">Confirm Password</string>
     <string name="txt_logout">Logout</string>
     <string name="edit">edit profile</string>
+    <string name="txt_check_again">Check Again</string>
+    <string name="decs_your_eye_image">your eye image</string>
+    <string name="txt_no_data">No Data</string>
 </resources>

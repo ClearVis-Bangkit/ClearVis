@@ -5,14 +5,12 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import arrow.core.Either
 import arrow.core.getOrElse
 import com.bumptech.glide.Glide
 import com.canhub.cropper.CropImage
 import com.dicoding.bintangpr.clearvis.databinding.ActivityResultBinding
-import com.dicoding.bintangpr.clearvis.view.main.MainActivity
 import io.github.nefilim.kjwt.JWT
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -55,7 +53,6 @@ class ResultActivity : AppCompatActivity() {
                 binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
             }
 
-
             eyeCheckViewModel.getUser().observe(this) { data ->
                 val getId = JWT.decode(data.accessToken).map {
                     it.claimValue("id").getOrElse { "error" }
@@ -70,26 +67,16 @@ class ResultActivity : AppCompatActivity() {
                 val requestImageFile = file.asRequestBody("image/jpg".toMediaTypeOrNull())
                 val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "image",
-                    file.name,
+                    file.name + "jpg",
                     requestImageFile
                 )
 
                 eyeCheckViewModel.uploadHistory(data.accessToken, userId, imageMultipart, status)
             }
-
-            eyeCheckViewModel.uploadResponse.observe(this) {
-                if (it.success == true) {
-                    Toast.makeText(
-                        this@ResultActivity,
-                        "Data Uploaded",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
         }
 
         binding.btnCheckAgain.setOnClickListener {
-            val intent = Intent(this@ResultActivity, MainActivity::class.java)
+            val intent = Intent(this@ResultActivity, EyeCheckFragment::class.java)
             intent.flags =
                 Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)

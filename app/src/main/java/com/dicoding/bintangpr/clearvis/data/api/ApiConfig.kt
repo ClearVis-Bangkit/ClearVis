@@ -2,6 +2,7 @@ package com.dicoding.bintangpr.clearvis.data.api
 import com.dicoding.bintangpr.clearvis.data.model.LoginResponse
 import com.dicoding.bintangpr.clearvis.data.model.RegisterResponse
 import com.dicoding.bintangpr.clearvis.data.model.UploadHistoryResponse
+import com.dicoding.bintangpr.clearvis.data.model.UserResultHistoryResponse
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -54,4 +55,10 @@ interface ApiService {
         @Part file: MultipartBody.Part,
         @Part("status") status: RequestBody
     ): Call<UploadHistoryResponse>
+
+    @GET("history")
+    fun getHistory(
+        @Header("Authorization") token: String,
+        @Query("userId") id: Int
+    ): Call<UserResultHistoryResponse>
 }
