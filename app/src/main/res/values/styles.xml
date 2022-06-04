@@ -70,6 +70,12 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="TextAppearance.MdcTypographyStyles.Tittle2" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
     <style name="TextAppearance.MdcTypographyStyles.Body1" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/poppins</item>
         <item name="android:fontFamily">@font/poppins</item>
