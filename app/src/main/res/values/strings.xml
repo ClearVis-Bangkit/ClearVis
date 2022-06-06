@@ -36,4 +36,6 @@
     <string name="txt_check_again">Check Again</string>
     <string name="decs_your_eye_image">your eye image</string>
     <string name="txt_no_data">No Data</string>
+    <string name="illustration">illustrasi</string>
+    <string name="articleTitle">Article</string>
 </resources>
