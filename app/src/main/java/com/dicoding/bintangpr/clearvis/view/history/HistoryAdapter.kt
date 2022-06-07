@@ -1,5 +1,7 @@
 package com.dicoding.bintangpr.clearvis.view.history
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,7 +9,7 @@ import com.dicoding.bintangpr.clearvis.R
 import com.dicoding.bintangpr.clearvis.data.model.DataItem
 import com.dicoding.bintangpr.clearvis.databinding.ItemResultBinding
 import com.dicoding.bintangpr.clearvis.utils.setImageUrl
-import org.threeten.bp.format.DateTimeFormatter
+import java.text.SimpleDateFormat
 
 
 class HistoryAdapter(
@@ -28,19 +30,24 @@ class HistoryAdapter(
 
     inner class ViewHolder(private val binding: ItemResultBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SimpleDateFormat")
         fun bind(content: DataItem) {
             with(binding) {
-
-                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
-                val formatted = content.createdAt?.format(formatter)
-
+                if (content.status == "Normal") {
+                    tvStatus.setTextColor(Color.parseColor("#26F634"))
+                } else {
+                    tvStatus.setTextColor(Color.parseColor("#FF3333"))
+                }
+                val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+                val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+                val output: String = formatter.format(parser.parse(content.createdAt))
                 ivResult.setImageUrl(
                     itemView.context,
-                    content.image,
+                    "http://34.142.244.51/${content.image}",
                     pbImage,
                     R.drawable.ic_baseline_broken_image_24
                 )
-                tvDate.text = formatted.toString()
+                tvDate.text = output
                 tvStatus.text = content.status.toString()
             }
         }

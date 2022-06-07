@@ -17,12 +17,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_result" />
 
-    <TextView
-        android:id="@+id/tv_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_no_data"
-        android:textSize="30sp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/no_data"
+        android:layout_width="336dp"
+        android:layout_height="336dp"
+        app:lottie_rawRes="@raw/no_data"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
