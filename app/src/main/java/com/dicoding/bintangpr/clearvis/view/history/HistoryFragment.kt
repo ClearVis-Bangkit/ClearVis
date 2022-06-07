@@ -62,10 +62,10 @@ class HistoryFragment : Fragment() {
         if (listUser.isNullOrEmpty()) {
             showLoading(false)
             binding?.rvHistory?.gone()
-            binding?.tvEmpty?.visible()
+            binding?.noData?.visible()
         } else {
             showLoading(false)
-            binding?.tvEmpty?.gone()
+            binding?.noData?.gone()
             binding?.rvHistory?.visible()
             val mainAdapter = HistoryAdapter(listUser)
             binding?.rvHistory?.apply {
@@ -81,7 +81,7 @@ class HistoryFragment : Fragment() {
         if (state) {
             binding?.rvHistory?.gone()
             binding?.pbUser?.visible()
-            binding?.tvEmpty?.gone()
+            binding?.noData?.gone()
         } else {
             binding?.pbUser?.gone()
         }
