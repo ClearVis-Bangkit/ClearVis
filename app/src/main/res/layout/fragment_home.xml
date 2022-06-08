@@ -31,6 +31,29 @@
             app:layout_constraintStart_toStartOf="@+id/home_illustration"
             app:layout_constraintTop_toBottomOf="@+id/home_illustration" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="409dp"
+            android:layout_height="497dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article_section_title"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/item_artikels" />
+
+        <ProgressBar
+            android:id="@+id/pb_artikel"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="1dp"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rv_home" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clearvis_logo"
+        app:srcCompat="@drawable/ic_logo2"
         android:contentDescription="@string/desc_logo_clearvis" />
 
     <TextView
