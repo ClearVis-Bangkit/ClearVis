@@ -1,8 +1,5 @@
 package com.dicoding.bintangpr.clearvis.data.api
-import com.dicoding.bintangpr.clearvis.data.model.LoginResponse
-import com.dicoding.bintangpr.clearvis.data.model.RegisterResponse
-import com.dicoding.bintangpr.clearvis.data.model.UploadHistoryResponse
-import com.dicoding.bintangpr.clearvis.data.model.UserResultHistoryResponse
+import com.dicoding.bintangpr.clearvis.data.model.*
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -61,4 +58,7 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Query("userId") id: Int
     ): Call<UserResultHistoryResponse>
+
+    @GET("artikels")
+    fun getArticles(): Call<ArtikelsResponse>
 }

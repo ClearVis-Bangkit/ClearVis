@@ -23,9 +23,9 @@
             android:id="@+id/iv_result"
             android:layout_width="100dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/decs_your_eye_image"
             android:scaleType="fitXY"
-            tools:src="@tools:sample/avatars"
-            android:contentDescription="@string/decs_your_eye_image" />
+            tools:src="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="match_parent"
