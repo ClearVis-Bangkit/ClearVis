@@ -84,6 +84,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
                 tools:text="Healthy" />
 
+            <LinearLayout
+                android:id="@+id/ln_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/tv_result"
+                app:layout_constraintStart_toStartOf="@+id/tv_result"
+                app:layout_constraintTop_toBottomOf="@+id/tv_result">
+
+                <TextView
+                    android:id="@+id/tv_recomendation"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click here to find out more"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_result"
+                    app:layout_constraintStart_toStartOf="@+id/tv_result"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow" />
+            </LinearLayout>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_checkAgain"
                 style="@style/TextAppearance.MdcTypographyStyles.Button"
@@ -92,9 +120,9 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/txt_check_again"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/tv_result"
-                app:layout_constraintStart_toStartOf="@+id/tv_result"
-                app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+                app:layout_constraintEnd_toEndOf="@+id/ln_action"
+                app:layout_constraintStart_toStartOf="@+id/ln_action"
+                app:layout_constraintTop_toBottomOf="@+id/ln_action" />
 
             <ProgressBar
                 android:id="@+id/progressBar"

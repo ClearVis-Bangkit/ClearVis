@@ -7,18 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import arrow.core.Either
-import arrow.core.getOrElse
-import com.dicoding.bintangpr.clearvis.data.model.Data
 import com.dicoding.bintangpr.clearvis.data.model.DataArticle
-import com.dicoding.bintangpr.clearvis.data.model.DataItem
 import com.dicoding.bintangpr.clearvis.databinding.FragmentHomeBinding
 import com.dicoding.bintangpr.clearvis.utils.gone
 import com.dicoding.bintangpr.clearvis.utils.visible
-import com.dicoding.bintangpr.clearvis.view.history.HistoryAdapter
-import io.github.nefilim.kjwt.JWT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {

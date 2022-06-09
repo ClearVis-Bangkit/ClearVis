@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.dicoding.bintangpr.clearvis.data.api.ApiConfig
 import com.dicoding.bintangpr.clearvis.data.model.ArtikelsResponse
 import com.dicoding.bintangpr.clearvis.data.model.DataArticle
-import com.dicoding.bintangpr.clearvis.view.main.MainViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

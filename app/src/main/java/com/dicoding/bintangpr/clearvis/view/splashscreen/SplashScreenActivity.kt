@@ -2,7 +2,10 @@ package com.dicoding.bintangpr.clearvis.view.splashscreen
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.bintangpr.clearvis.databinding.ActivitySplashScreenBinding
 import com.dicoding.bintangpr.clearvis.view.login.LoginActivity
@@ -23,7 +26,7 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.hide()
+        setupView()
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(1000)
@@ -41,5 +44,18 @@ class SplashScreenActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setupView() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
     }
 }

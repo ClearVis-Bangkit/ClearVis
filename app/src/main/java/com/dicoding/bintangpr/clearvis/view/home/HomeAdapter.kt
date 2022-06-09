@@ -1,17 +1,13 @@
 package com.dicoding.bintangpr.clearvis.view.home
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.bintangpr.clearvis.R
 import com.dicoding.bintangpr.clearvis.data.model.DataArticle
-import com.dicoding.bintangpr.clearvis.data.model.DataItem
 import com.dicoding.bintangpr.clearvis.databinding.ItemArtikelsBinding
-import com.dicoding.bintangpr.clearvis.databinding.ItemResultBinding
 import com.dicoding.bintangpr.clearvis.utils.setImageUrl
-import java.text.SimpleDateFormat
 
 class HomeAdapter(
     private val data: List<DataArticle>
@@ -39,8 +35,6 @@ class HomeAdapter(
         @SuppressLint("SimpleDateFormat")
         fun bind(content: DataArticle) {
             with(binding) {
-
-
                 ivArticle.setImageUrl(
                     itemView.context,
                     content.img,

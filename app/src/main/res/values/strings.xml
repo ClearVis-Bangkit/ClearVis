@@ -28,14 +28,11 @@
     <string name="desc_icon_email">icon email</string>
     <string name="desc_background_password">background password</string>
     <string name="decs_icon_password">icon password</string>
-    <string name="save">Save Profile</string>
     <string name="password">Password</string>
     <string name="Password_Confirm">Confirm Password</string>
     <string name="txt_logout">Logout</string>
-    <string name="edit">edit profile</string>
     <string name="txt_check_again">Check Again</string>
     <string name="decs_your_eye_image">your eye image</string>
-    <string name="txt_no_data">No Data</string>
     <string name="illustration">illustrasi</string>
     <string name="articleTitle">Article</string>
     <string name="article_img">Image Article</string>

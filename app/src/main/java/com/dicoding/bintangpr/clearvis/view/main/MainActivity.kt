@@ -8,9 +8,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dicoding.bintangpr.clearvis.R
 import com.dicoding.bintangpr.clearvis.databinding.ActivityMainBinding
-import com.dicoding.bintangpr.clearvis.view.profile.ProfileViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
