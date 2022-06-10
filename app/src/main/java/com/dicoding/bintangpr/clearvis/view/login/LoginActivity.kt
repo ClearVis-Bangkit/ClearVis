@@ -9,6 +9,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
 import com.dicoding.bintangpr.clearvis.view.main.MainActivity
@@ -86,14 +87,25 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.passwordEditTextLayout.text.toString()
             when {
                 email.isEmpty() -> {
-                    binding.emailEt.error = "Insert E-Mail"
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Please Insert your E-mail!",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Insert Password"
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Please Insert your Password",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 password.length<6 ->{
-                    binding.passwordEditTextLayout.error =
-                        "Password must have at least 6 characters"
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Password must have at least 6 characters",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 else -> {
                     loginViewModel.loginUser(email, password)
