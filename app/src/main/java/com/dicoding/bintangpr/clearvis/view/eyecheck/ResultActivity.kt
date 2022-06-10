@@ -3,6 +3,7 @@ package com.dicoding.bintangpr.clearvis.view.eyecheck
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,8 @@ import arrow.core.getOrElse
 import com.bumptech.glide.Glide
 import com.canhub.cropper.CropImage
 import com.dicoding.bintangpr.clearvis.databinding.ActivityResultBinding
+import com.dicoding.bintangpr.clearvis.utils.gone
+import com.dicoding.bintangpr.clearvis.utils.visible
 import io.github.nefilim.kjwt.JWT
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -48,6 +51,18 @@ class ResultActivity : AppCompatActivity() {
                 .load(bitmap)
                 .into(binding.ivEye)
             detectImage(bitmap)
+
+            if (detectionResult[0].title == "Retinoblastoma") {
+                binding.lnAction.visible()
+            } else {
+                binding.lnAction.gone()
+            }
+            binding.lnAction.setOnClickListener {
+                val openURL = Intent(Intent.ACTION_VIEW)
+                openURL.data =
+                    Uri.parse("https://hellosehat.com/kanker/kanker-lainnya/retinoblastoma/")
+                startActivity(openURL)
+            }
 
             eyeCheckViewModel.isLoading.observe(this) {
                 binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE

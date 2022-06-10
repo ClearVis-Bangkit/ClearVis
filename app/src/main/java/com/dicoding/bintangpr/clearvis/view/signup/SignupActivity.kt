@@ -9,8 +9,6 @@ import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import com.dicoding.bintangpr.clearvis.data.preference.UserPreference
 import com.dicoding.bintangpr.clearvis.databinding.ActivitySignupBinding
 import com.dicoding.bintangpr.clearvis.view.login.LoginActivity
 
@@ -43,13 +41,13 @@ class SignupActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
         } else{
             binding.progressBar.visibility = View.GONE
-            signupViewModel.isMessage.observe(this, {
+            signupViewModel.isMessage.observe(this) {
                 var message = it
-                signupViewModel.isSuccess.observe(this,{
+                signupViewModel.isSuccess.observe(this) {
                     AlertDialog.Builder(this).apply {
                         setTitle("Yeah!")
                         setMessage(message)
-                        if (it){
+                        if (it) {
                             setPositiveButton("Lanjut") { _, _ ->
                                 val intent = Intent(this@SignupActivity, LoginActivity::class.java)
                                 startActivity(intent)
@@ -63,9 +61,9 @@ class SignupActivity : AppCompatActivity() {
                         create()
                         show()
                     }
-                })
+                }
 
-            })
+            }
         }
     }
 
@@ -79,28 +77,26 @@ class SignupActivity : AppCompatActivity() {
             val confirmPassword = binding.confirmPasswordEt.text.toString()
             when{
                 name.isEmpty() ->{
-                    binding.nameEt.error ="Masukkan Nama"
+                    binding.nameEt.error = "Insert Name"
                 }
                 email.isEmpty() ->{
-                    binding.emailEt.error ="Masukkan Email"
+                    binding.emailEt.error = "Insert E-Mail"
                 }
                 password.isEmpty() ->{
-                    binding.passwordEt.error ="Masukkan Password"
+                    binding.passwordEt.error = "Insert Password"
                 }
                 confirmPassword.isEmpty() ->{
-                    binding.confirmPasswordEt.error ="Masukkan Password Confirm"
+                    binding.confirmPasswordEt.error = "Insert Confirm Password"
                 }
                 confirmPassword != password ->{
-                    binding.confirmPasswordEt.error = "Password Berbeda"
+                    binding.confirmPasswordEt.error = "Password doesn't match"
                 }
-                else ->{
-                    signupViewModel.registerUser(name, email, password,confirmPassword)
-                    signupViewModel.isLoading.observe(this, {
+                else -> {
+                    signupViewModel.registerUser(name, email, password, confirmPassword)
+                    signupViewModel.isLoading.observe(this) {
                         showLoading(it)
-                    })
-
+                    }
                 }
-
             }
         }
         binding.loginBtn.setOnClickListener {

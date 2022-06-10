@@ -1,33 +1,21 @@
 package com.dicoding.bintangpr.clearvis.view.login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.os.Message
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import com.dicoding.bintangpr.clearvis.databinding.ActivityLoginBinding
 import com.dicoding.bintangpr.clearvis.view.main.MainActivity
 import com.dicoding.bintangpr.clearvis.view.signup.SignupActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.math.log
-
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private val loginViewModel: LoginViewModel by viewModel()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,15 +45,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun alertBuilderFalse(){
-            AlertDialog.Builder(this).apply {
-                setTitle("Something wrong!")
-                setMessage("email atau password anda salah")
-                setPositiveButton("Lanjut") { _, _ ->
-
-                }
-                create()
-                show()
-            }
+        Toast.makeText(
+            this@LoginActivity,
+            "wrong email or password",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     private fun alertBuilderConfirm() {
@@ -79,7 +63,6 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 
 
     private fun setupView() {
@@ -101,13 +84,14 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.passwordEditTextLayout.text.toString()
             when {
                 email.isEmpty() -> {
-                    binding.emailEt.error = "Masukkan email"
+                    binding.emailEt.error = "Insert E-Mail"
                 }
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Masukkan password"
+                    binding.passwordEditTextLayout.error = "Insert Password"
                 }
                 password.length<6 ->{
-                    binding.passwordEditTextLayout.error = "Password minimal memiliki 6 karakter"
+                    binding.passwordEditTextLayout.error =
+                        "Password must have at least 6 characters"
                 }
                 else -> {
                     loginViewModel.loginUser(email, password)
