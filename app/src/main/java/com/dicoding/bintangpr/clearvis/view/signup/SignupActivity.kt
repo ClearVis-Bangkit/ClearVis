@@ -8,6 +8,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -81,19 +82,46 @@ class SignupActivity : AppCompatActivity() {
             val confirmPassword = binding.confirmPasswordEt.text.toString()
             when{
                 name.isEmpty() ->{
-                    binding.nameEt.error = "Insert Name"
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Please Insert your name!",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 email.isEmpty() ->{
-                    binding.emailEt.error = "Insert E-Mail"
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Please Insert your E-mail!",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 password.isEmpty() ->{
-                    binding.passwordEt.error = "Insert Password"
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Please Insert your Password",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                password.length<6 ->{
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Password must have at least 6 characters",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 confirmPassword.isEmpty() ->{
-                    binding.confirmPasswordEt.error = "Insert Confirm Password"
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Please Insert the Confirm Password",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 confirmPassword != password ->{
-                    binding.confirmPasswordEt.error = "Password doesn't match"
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "Password doesn't match!",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 else -> {
                     signupViewModel.registerUser(name, email, password, confirmPassword)
