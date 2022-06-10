@@ -3,6 +3,8 @@ package com.dicoding.bintangpr.clearvis.view.signup
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -15,6 +17,8 @@ import com.dicoding.bintangpr.clearvis.view.login.LoginActivity
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
     private val signupViewModel by viewModels<SignupViewModel>()
+    private var isHidden = true
+    private var isHiddenConfirm = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
@@ -99,6 +103,25 @@ class SignupActivity : AppCompatActivity() {
                 }
             }
         }
+        binding.showPassword.setOnClickListener{
+            if (isHidden){
+                binding.passwordEt.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                isHidden = false
+            } else{
+                binding.passwordEt.transformationMethod = PasswordTransformationMethod.getInstance()
+                isHidden = true
+            }
+        }
+        binding.showPasswordConfirm.setOnClickListener{
+            if (isHiddenConfirm){
+                binding.confirmPasswordEt.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                isHiddenConfirm = false
+            } else{
+                binding.confirmPasswordEt.transformationMethod = PasswordTransformationMethod.getInstance()
+                isHiddenConfirm = true
+            }
+        }
+
         binding.loginBtn.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }

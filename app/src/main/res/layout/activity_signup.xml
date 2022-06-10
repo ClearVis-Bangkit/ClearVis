@@ -128,8 +128,8 @@
         android:layout_width="255dp"
         android:layout_height="48dp"
         android:layout_marginEnd="8dp"
-        android:inputType="textPassword"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/password_layout"
         app:layout_constraintEnd_toEndOf="@+id/password_layout"
@@ -206,5 +206,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_btn" />
 
+    <ImageButton
+        android:id="@+id/show_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEt"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEt"
+        app:layout_constraintTop_toTopOf="@+id/passwordEt"
+        app:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
+
+    <ImageButton
+        android:id="@+id/show_password_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/confirm_passwordEt"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_passwordEt"
+        app:layout_constraintTop_toTopOf="@+id/confirm_passwordEt"
+        app:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
