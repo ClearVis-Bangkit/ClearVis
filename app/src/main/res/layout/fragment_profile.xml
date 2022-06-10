@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/account_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/ic_profile_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_person_104"
+            app:layout_constraintBottom_toBottomOf="@+id/account_circle"
+            app:layout_constraintEnd_toEndOf="@+id/account_circle"
+            app:layout_constraintStart_toStartOf="@+id/account_circle"
+            app:layout_constraintTop_toTopOf="@+id/account_circle" />
+
+        <ImageView
+            android:id="@+id/fullname_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_circle"
+            app:srcCompat="@drawable/et_layout" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            style="@style/profile_text"
+            android:layout_width="255dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittext_layout"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fullname_layout"
+            app:layout_constraintEnd_toEndOf="@+id/fullname_layout"
+            app:layout_constraintTop_toTopOf="@+id/fullname_layout"
+            tools:text="@string/name_hint" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintBottom_toBottomOf="@+id/fullname_layout"
+            app:layout_constraintEnd_toStartOf="@+id/name_tv"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/fullname_layout"
+            app:layout_constraintTop_toTopOf="@+id/fullname_layout" />
+
+
+        <ImageView
+            android:id="@+id/email_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/desc_background_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullname_layout"
+            app:srcCompat="@drawable/et_layout" />
+
+
+        <TextView
+            android:id="@+id/email_et"
+            style="@style/profile_text"
+            android:layout_width="255dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints="E-mail"
+            android:background="@drawable/edittext_layout"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/email_layout"
+            app:layout_constraintEnd_toEndOf="@+id/email_layout"
+            app:layout_constraintTop_toTopOf="@+id/email_layout"
+            tools:text="@string/email_hint" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_icon_email"
+            android:src="@drawable/ic_baseline_email_24"
+            app:layout_constraintBottom_toBottomOf="@+id/email_layout"
+            app:layout_constraintEnd_toStartOf="@+id/email_et"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/email_layout"
+            app:layout_constraintTop_toTopOf="@+id/email_layout" />
+
+
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="312dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/txt_logout"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/soft_blue"
+            app:layout_constraintEnd_toEndOf="@+id/email_layout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/email_layout"
+            app:layout_constraintTop_toBottomOf="@+id/email_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
