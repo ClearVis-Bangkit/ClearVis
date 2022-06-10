@@ -29,10 +29,7 @@ class PasswordEditText: AppCompatEditText {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-
         background = ContextCompat.getDrawable(context, R.drawable.edittext_layout)
-
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 
@@ -43,9 +40,7 @@ class PasswordEditText: AppCompatEditText {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.length<6){
-                    error = "Minimum 6 Karakter"
-                }
+
             }
 
             override fun afterTextChanged(s: Editable) {
