@@ -143,5 +143,15 @@
         app:layout_constraintStart_toStartOf="parent"
         style="?android:attr/borderlessButtonStyle"/>
 
+    <ImageButton
+        android:id="@+id/show_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEditTextLayout"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+        app:layout_constraintTop_toTopOf="@+id/passwordEditTextLayout"
+        app:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
