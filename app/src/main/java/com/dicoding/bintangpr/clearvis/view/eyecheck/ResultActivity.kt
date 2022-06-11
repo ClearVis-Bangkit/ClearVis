@@ -59,9 +59,12 @@ class ResultActivity : AppCompatActivity() {
             }
             binding.lnAction.setOnClickListener {
                 val openURL = Intent(Intent.ACTION_VIEW)
+                openURL.flags =
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 openURL.data =
                     Uri.parse("https://hellosehat.com/kanker/kanker-lainnya/retinoblastoma/")
                 startActivity(openURL)
+                finish()
             }
 
             eyeCheckViewModel.isLoading.observe(this) {
