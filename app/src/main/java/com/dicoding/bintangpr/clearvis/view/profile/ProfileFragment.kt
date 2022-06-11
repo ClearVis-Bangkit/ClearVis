@@ -45,10 +45,10 @@ class ProfileFragment : Fragment() {
 
     private fun setUpView(token: String) {
         val getName = JWT.decode(token).map {
-            it.claimValue("name").getOrElse { "error" }
+            it.claimValue("name").getOrElse { "" }
         }
         val getEmail = JWT.decode(token).map {
-            it.claimValue("email").getOrElse { "error" }
+            it.claimValue("email").getOrElse { "" }
         }
         val name = when (getName) {
             is Either.Right -> getName.value
