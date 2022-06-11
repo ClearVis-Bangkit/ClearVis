@@ -52,11 +52,11 @@ class ProfileFragment : Fragment() {
         }
         val name = when (getName) {
             is Either.Right -> getName.value
-            else -> "error"
+            else -> ""
         }
         val email = when (getEmail) {
             is Either.Right -> getEmail.value
-            else -> "error"
+            else -> ""
         }
 
         binding?.nameTv?.text = name
