@@ -13,7 +13,6 @@
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1255" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_baseline_person_104.xml" value="0.1255" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1255" />
-        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.1255" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_clearvis.xml" value="0.124" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_clearvis1.xml" value="0.124" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_clearvis2.xml" value="0.124" />
@@ -24,10 +23,10 @@
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_logo3.xml" value="0.124" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/drawable/ic_profile_img.xml" value="0.1255" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout-v28/fragment_home.xml" value="0.11302083333333333" />
-        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_login.xml" value="0.6" />
+        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_main.xml" value="0.2210144927536232" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_result.xml" value="0.2210144927536232" />
-        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_signup.xml" value="0.152" />
+        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/activity_splash_screen.xml" value="0.1852355072463768" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/editlayout.xml" value="0.4" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/edittext_layout.xml" value="0.2210144927536232" />
@@ -35,7 +34,7 @@
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/fragment_history.xml" value="0.2210144927536232" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/fragment_home.xml" value="0.2825520833333333" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/item_artikels.xml" value="0.6" />
+        <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/item_artikels.xml" value="0.4244306418219462" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/layout/item_result.xml" value="0.3546712802768166" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1255" />
         <entry key="..\:/AndroidDicoding/ClearVis/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1255" />
@@ -44,12 +43,13 @@
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/drawable/ic_detect.xml" value="0.1125" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/activity_login.xml" value="0.21" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/activity_main.xml" value="0.16574074074074074" />
-        <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/activity_result.xml" value="0.16574074074074074" />
+        <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/activity_result.xml" value="0.22" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/activity_splash_screen.xml" value="0.1648148148148148" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/fragment_eye_check.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/fragment_history.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/fragment_profile.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/item_artikels.xml" value="0.25" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/layout/item_result.xml" value="0.25" />
         <entry key="..\:/Users/Sujadiyono/AndroidStudioProjects/ClearVis/app/src/main/res/menu/navigation_menu.xml" value="0.17916666666666667" />
       </map>
