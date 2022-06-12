@@ -2,7 +2,7 @@
 Early Detection of Eye Disease
 
 ## Author
-#### Xaplose Team - B21-CAP0132  
+#### ClearVis Team - C22-PS207  
 1. Daffa Aditya Rahman  (a2224w2068) - Mobile Development 
 2. Muhammad Bintang Prabowo (a2006f0586) - Mobile Development
 3. RE. Miracle Panjaitan (M7006F0637) - Machine Learning 
