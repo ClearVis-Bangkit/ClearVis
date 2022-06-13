@@ -11,11 +11,11 @@ Early Detection of Eye Disease
 6. Muhammad Hafizh Nabil (c2224w2065) - Cloud Computing 
 
 ## Build With
-1.MVVM Architecture
-2.Retrofit
-3.Tensorflow Lite
-4.Koin
-5.And many more..
+1. MVVM Architecture
+2. Retrofit
+3. Tensorflow Lite
+4. Koin
+5. And many more..
 
 ## Local Setup
 * Clone this repository.
